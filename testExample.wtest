@@ -1,0 +1,30 @@
+import example.*
+
+describe "Tests de la casa de Tom y Jerry" {
+
+  test "Tom pasa el día: limpia la casa y atrapa a Jerry" { 
+    casa.pasarElDia() 
+    assert.equals(0, casa.suciedad()) 
+    assert.equals(100, tom.energia()) 
+    assert.equals(ningunQuilombero, casa.quilombero()) 
+    }
+
+  test "Tom pasa la noche con Tuffy: duerme pero Tuffy interrumpe su sueño" { 
+    casa.quilombero(tuffy) 
+    casa.pasarNoche() 
+    assert.equals(130, tom.energia()) // +50 de siesta - 20 por Tuffy 
+    }
+
+  test "Spike limpia 150 de suciedad al pasar el día" { 
+    casa.cuidador(spike) 
+    casa.pasarElDia() 
+    assert.equals(0, casa.suciedad()) 
+    }
+  
+  test "Robocat deja la casa totalmente limpia" { 
+    casa.cuidador(robocat) 
+    casa.pasarElDia() 
+    assert.equals(0, casa.suciedad()) 
+    assert.equals(ningunQuilombero, casa.quilombero()) 
+    }
+}
